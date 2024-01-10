@@ -418,7 +418,6 @@ body {
 	display: inline-block;
 	align-items: flex-end;
 	text-align: center;
-	margin-bottom: 4px;
 	transform: translateY(400px);
 	opacity: 0;
 }
@@ -587,12 +586,14 @@ textarea::placeholder {
 	border-bottom: solid 5px white;		
 }
 
-
-
 .container{
     width: 70vw;
     margin-right: auto;
     margin-left: auto;
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 

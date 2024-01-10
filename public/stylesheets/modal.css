@@ -31,13 +31,15 @@
 	background-color: #212121;
 	color: #f2f2f2;
 	margin: 0 auto;
-	max-width: 900px;
+	width: 100vw;
+	max-width: 650px;
+	height: fit-content;
 	box-shadow: 0 5px 8px 0 rgba(0, 0 ,0, 0.2),
 				0 7px 20px 0 rgba(0, 0 ,0, 0.17);
 	animation-name:modalopen;
 	animation-duration: 0.5s;
 	position:relative;
-	top: 5vh;
+
 	}
 
 .closeBtn {

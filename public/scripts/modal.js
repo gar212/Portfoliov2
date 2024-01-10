@@ -11,7 +11,7 @@ var $owl = $('.owl-carousel');
 
 // Function to open modal
 function openModal(){
-	modal.style.display = 'block';
+	modal.style.display = 'flex';
 	$owl.html($owl.find('.owl-stage-outer').html()).removeClass('owl-loaded');
 	$owl.html($owl.find('.owl-stage-outer').html()).removeClass('owl-hidden');
 }
@@ -31,22 +31,22 @@ var modalText = {
 	reddew: {
 		title: "Red Dew",
 		desc: "Graphic Design Company Intro Concept. Site is written in HTML, CSS3, and Javascript",
-		available: true,
+		available: false,
 		link: "https://red-dew.herokuapp.com/",
 		images: ['reddew1.jpg', 'reddew2.jpg', 'reddew3.jpg']
 	},
 	persusvincere: {
 		title: "Persus Vincere",
 		desc: "Architect Design Company Intro Concept. Site is written in HTML, CSS3, and Javascript",
-		available: true,
-		link: "https://persus-vincere.herokuapp.com/",
+		available: false,
+		link: "https://persusvincere.herokuapp.com/",
 		images: ['persus1.jpg', 'persus2.jpg', 'persus3.jpg']
 	},
 	
 	annex: {
 		title: "Annex",
 		desc: "Share your favourite places on Earth. Features user authentication. Create, delete, and update posts. Site uses MongoDB and written in Node.js",
-		available: true,
+		available: false,
 		link: "https://gar-annex.herokuapp.com/campgrounds",
 		images: ['annex1.jpg', 'annex2.jpg']
 	},
@@ -61,13 +61,13 @@ var modalText = {
 		title: "Level Up Works",
 		desc: `Redesign of the Level Up Works website. Uses MongoDB, Express, React, NodeJS
 		Design was created by UX/UI Designers. I was tasked to develop the website and add RESTful API functionality`,
-		available: true,
-		link: "https://levelupworksv2.herokuapp.com/",
+		available: false,
+		link: "https://levelupworksv3.herokuapp.com/",
 		images: ['levelupworks1.jpg', 'levelupworks2.jpg']
 	},
 	fgc: {
 		title: "Communication Design - FGC",
-		desc: "Fighting game tournament invitational poster designs.",
+		desc: "General Graphic Designs.",
 		available: true,
 		link: "https://www.behance.net/gallery/58362571/Communication-Design-FGC",
 		images: ['fgc1.jpg', 'fgc2.jpg']
@@ -96,7 +96,7 @@ function fillModal(id) {
 		$('.view-site').text("View Site");
 	} else {
 		$('.view-site').attr('href', modalText[id].link);
-		$('.view-site').text("Coming soon");
+		$('.view-site').text("Unavailable");
 		$('.view-site').removeAttr("href");
 	}
 	$owl.trigger('destroy.owl.carousel');
@@ -104,7 +104,6 @@ function fillModal(id) {
 	var content = "";
 		for (let i = 0; i < modalText[id].images.length; i++){
 			content += '<div class="item"><img src="stylesheets/img/'+ event.target.id + "/" + modalText[id].images[i] +'"/></div>';
-			// $owl.html('<div class="owl-item"><img src="stylesheets/img/' + modalText[id].images[i] +'"/></div>');
 		}
 	
 	$owl.html(content);
